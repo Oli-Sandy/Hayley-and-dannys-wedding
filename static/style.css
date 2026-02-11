@@ -2,8 +2,8 @@
    ROOT VARIABLES
 ========================================= */
 :root {
-    --primary: #ff3131;
-    --secondary: #ffc2e8;
+    --primary: #ffc2e8;
+    --secondary: #ff3131;
 
     /* Balanced tones */
     --bg-soft: #fff6fb;
