@@ -20,12 +20,6 @@
       </div>
     </nav>
 
-<script>
-const pageContent = `<div class="container py-5"><h1>Welcome to Our Wedding!</h1><p>This is the home page.</p></div>`;
-fetch('base.html').then(r=>r.text()).then(base=>{
-  const html = base.replace('<!-- PAGE_CONTENT -->', pageContent);
-  document.open(); document.write(html); document.close();
-});
-</script>
+
 </body>
 </html>
