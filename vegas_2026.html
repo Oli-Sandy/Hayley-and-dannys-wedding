@@ -1,13 +1,37 @@
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vegas 2026</title></head>
-<body>
-<script>
-const pageContent = `<div class="container py-5"><h1>Vegas 2026</h1><p>Details about our Vegas wedding celebration in 2026.</p></div>`;
-fetch('base.html').then(r=>r.text()).then(base=>{
-    const html = base.replace('<!-- PAGE_CONTENT -->', pageContent);
-    document.open(); document.write(html); document.close();
-});
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegas 2026</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body style="padding-top: 0;">
+    <nav class="navbar navbar-expand-lg w-100 fixed-top" style="background-color: #ff3131; z-index: 10;">
+      <div class="container-fluid">
+        <ul class="navbar-nav w-100 ms-auto mb-2 mb-lg-0" style="list-style:none; margin:0; padding:0;">
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="our_story.html">Our Story</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="vegas_2026.html">Vegas 2026</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="home_party.html">Home Party</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="honeymoon_and_gifts.html">Honeymoon & Gifts</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main-content" class="container py-5">
+        <div class="container py-5">
+            <h1 style="color: #ff3131; margin-bottom: 30px;">Vegas 2026</h1>
+            <p style="font-size: 1.1rem; line-height: 1.8;">Details about our Vegas wedding celebration in 2026. Get ready for an unforgettable weekend in Las Vegas as we celebrate our love with our closest family and friends. From the ceremony to the reception and beyond, we have something special planned!</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background-color: #333; color: white; text-align: center;">
+        <p style="margin: 0;">With love, Hayley & Danny</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
