@@ -1,53 +1,162 @@
-.navbar-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+:root {
+    --primary: #ff3131;
+    --secondary: #ffc2e8;
+
+    /* Balanced tones */
+    --bg-soft: #fff6fb;
+    --text-dark: #222;
+    --text-muted: #777;
+    --white: #ffffff;
 }
 
+/* =========================================
+   GLOBAL
+========================================= */
 body {
-    font-family: Arial, sans-serif;
-    background: #ffc2e8;
     margin: 0;
+    padding-top: 160px; /* space for navbar + wave */
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
+/* =========================================
+   NAVBAR
+========================================= */
 .navbar {
-    background-color: #ff3131 !important;
-    margin: 0;
-    padding: 0 40px;
-    border: none;
-    min-height: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.navbar-nav {
+    background: var(--primary) !important;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-}
-.navbar-nav .nav-link {
-    color: #fff !important;
-    font-weight: bold;
-    transition: background 0.2s, text-decoration 0.2s;
-    text-decoration: none;
-}
-.navbar-nav .nav-link:hover {
-    background: #e0e0e0;
-    color: #ff3131 !important;
-    border-radius: 4px;
-    text-decoration: underline;
+    align-items: center;
+    z-index: 1030;
 }
 
-.footer {
-    background-color: #ff3131;
-    color: rgb(0, 0, 0);
-    position: fixed;
+/* Center navigation */
+.navbar-nav {
+    justify-content: center !important;
+    gap: 40px;
+}
+
+/* Nav links */
+.nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.75;
+}
+
+/* =========================================
+   FLOWING SHAPE BELOW NAVBAR
+========================================= */
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: -70px; /* pushes wave below navbar */
     left: 0;
-    bottom: 0;
     width: 100%;
+    height: 70px;
+    background: var(--primary);
+    clip-path: ellipse(75% 100% at 50% 0%);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 16px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+button,
+.btn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: #e02626;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   LINKS
+========================================= */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+    background: var(--white);
+    border-top: 1px solid #eee;
     text-align: center;
-    z-index: 1030;
-    min-height: 30px;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding: 20px 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 90px;
+    }
+
+    body {
+        padding-top: 130px;
+    }
+
+    .navbar::after {
+        height: 50px;
+        bottom: -50px;
+    }
+
+    .navbar-nav {
+        gap: 20px;
+    }
 }
