@@ -33,9 +33,10 @@ body {
    NAVBAR
 ========================================= */
 
+
+/* Pink navigation bar */
 .navbar {
     background: var(--primary) !important;
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -43,14 +44,178 @@ body {
     display: flex;
     align-items: center;
     z-index: 1030;
-    padding-top: 10px; 
+    padding-top: 10px;
+    transition: background 0.2s;
+}
+
+
+/* Remove navbar background color change on hover */
+
+.navbar-logo-link:hover, .navbar-logo-link:focus {
+    background: transparent !important;
+}
+
+.navbar-logo {
+    height: 48px;
+    width: auto;
+    margin-right: 24px;
+    margin-left: 8px;
+    display: block;
+    align-self: center;
+    background: transparent;
+}
+
+.navbar .navbar-logo-link {
+    display: inline-block;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    width: auto;
+    height: auto;
+    flex: none;
+}
+
+/* Restore the pink flowing bar below navbar */
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: var(--primary);
+    clip-path: ellipse(75% 100% at 50% 0%);
+    z-index: 1029;
 }
 
 
 /* Center navigation */
 .navbar-nav {
-    justify-content: center !important;
-    gap: 40px;
+        justify-content: center !important;
+        gap: 40px;
+        align-items: center;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        gap: 0;
+        background: var(--primary);
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem 0;
+        position: relative;
+        z-index: 1050;
+    }
+    .navbar-collapse {
+        background: var(--primary);
+        width: 100vw;
+        margin-left: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        position: relative;
+        z-index: 1050;
+    }
+    .navbar-nav .nav-link {
+        color: #222 !important;
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #fff6fb;
+        background: transparent;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    .navbar-toggler {
+        border: 2px solid #ffb3de;
+        background: var(--primary);
+        color: #222;
+        border-radius: 6px;
+        padding: 6px 12px;
+        margin-left: auto;
+        margin-right: 8px;
+        font-size: 1.5rem;
+        outline: none;
+        box-shadow: none;
+        position: relative;
+        z-index: 1051;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar-toggler:focus, .navbar-toggler:active {
+        background: #ffe0f4;
+        border-color: #ffb3de;
+        box-shadow: 0 0 0 2px #ffb3de;
+    }
+    .navbar-toggler .navbar-toggler-icon {
+        background-image: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: none;
+        position: relative;
+    }
+    .navbar-toggler-icon span,
+    .navbar-toggler-icon span::before,
+    .navbar-toggler-icon span::after {
+        display: block;
+        width: 28px;
+        height: 4px;
+        background: #333;
+        border-radius: 2px;
+        content: '';
+        transition: background 0.2s;
+        margin: 0 auto;
+    }
+    .navbar-toggler-icon span {
+        position: relative;
+        margin: 8px 0;
+    }
+    .navbar-toggler-icon span::before,
+    .navbar-toggler-icon span::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .navbar-toggler-icon span::before {
+        top: -12px;
+        margin: 0;
+    }
+    .navbar-toggler-icon span::after {
+        bottom: -12px;
+        margin: 0;
+    }
+
+    /* Fix overlap by adding margin to the top nav item */
+    .navbar-nav .nav-item:first-child {
+        margin-top: 12px;
+    }
+
+    /* Restore previous high-contrast hover/focus style */
+    .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+        background: #fff;
+        color: #ff3131 !important;
+        outline: 2px solid #ff3131;
+        outline-offset: -2px;
+    }
+    .navbar-logo {
+        margin-bottom: 0;
+    }
+}
+
+/* High contrast for accessibility */
+.navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+    background: #fff;
+    color: #ff3131 !important;
+    outline: 2px solid #ff3131;
+    outline-offset: -2px;
 }
 
 /* Nav links */
