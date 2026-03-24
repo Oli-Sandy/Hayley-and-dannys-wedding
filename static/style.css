@@ -27,6 +27,9 @@ body {
     background: var(--bg-soft);
     color: var(--text-dark);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* =========================================
@@ -130,7 +133,7 @@ body {
         border-bottom: none;
     }
     .navbar-toggler {
-        border: 2px solid #ffb3de;
+        border: none;
         background: var(--primary);
         color: #222;
         border-radius: 6px;
@@ -148,8 +151,6 @@ body {
     }
     .navbar-toggler:focus, .navbar-toggler:active {
         background: #ffe0f4;
-        border-color: #ffb3de;
-        box-shadow: 0 0 0 2px #ffb3de;
     }
     .navbar-toggler .navbar-toggler-icon {
         background-image: none;
@@ -202,8 +203,6 @@ body {
     .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
         background: #fff;
         color: #ff3131 !important;
-        outline: 2px solid #ff3131;
-        outline-offset: -2px;
     }
     .navbar-logo {
         margin-bottom: 0;
@@ -214,13 +213,11 @@ body {
 .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
     background: #fff;
     color: #ff3131 !important;
-    outline: 2px solid #ff3131;
-    outline-offset: -2px;
 }
 
 /* Nav links */
 .nav-link {
-    color: var(--white) !important;
+    color: var(--text-dark) !important;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-decoration: none;
@@ -304,12 +301,13 @@ a:hover {
    FOOTER
 ========================================= */
 .footer {
-    background: var(--white);
+    background: var(--primary);
     border-top: 1px solid #eee;
     text-align: center;
     padding: 20px 0;
-    color: var(--text-muted);
+    color: black;
     font-size: 14px;
+    margin-top: auto;
 }
 
 /* =========================================
