@@ -215,11 +215,12 @@ body {
     color: #ff3131 !important;
 }
 
-/* Nav links */
-.nav-link {
-    color: var(--text-dark) !important;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    .navbar-nav .nav-link.active {
+        background: rgba(255, 49, 49, 0.12);
+        color: #ff3131 !important;
+        border-radius: 0.75rem;
+    }
+
     text-decoration: none;
     transition: opacity 0.2s ease;
 }
