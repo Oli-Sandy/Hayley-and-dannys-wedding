@@ -251,6 +251,32 @@ main {
     padding: 0 30px;
 }
 
+.story-toggle-btn {
+    flex: 1;
+    border: 1px solid rgba(255, 49, 49, 0.25);
+    background: #fff;
+    color: var(--text-dark);
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.story-toggle-btn:hover {
+    transform: translateY(-1px);
+}
+
+.story-toggle-btn.active {
+    background: var(--secondary);
+    color: #fff;
+    border-color: var(--secondary);
+    box-shadow: 0 10px 24px rgba(255, 49, 49, 0.18);
+}
+
+.story-card.hidden {
+    display: none !important;
+}
+
 /* Headings */
 h1, h2, h3 {
     font-family: "Molle", cursive;
